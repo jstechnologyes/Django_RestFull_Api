@@ -1,0 +1,32 @@
+
+{% extends 'base.html' %}
+
+{% block title %}
+    Home
+{% endblock %}
+
+{% block body %}
+   {% if products %}
+   {% for product in products %}
+   {{ product.name }}
+   {{ product.descriptions}}
+
+    {% endfor %}
+
+   {% endif %}
+    <div class="container">
+        {% if products %}
+        {% for p in procuts %}
+        <div class="card" style="width: 18rem;">
+            <div class="card-body">
+              <h5 class="card-title">{{ p.name }}</h5>
+              <h6 class="card-subtitle mb-2 text-muted">{{p}}</h6>
+              <p class="card-text">{{ p.descriptions }}</p>
+              <a href="#" class="card-link">Card link</a>
+              <a href="#" class="card-link">Another link</a>
+            </div>
+          </div>
+    </div>
+    {% endfor %}
+    {% endif %}
+{% endblock %}
